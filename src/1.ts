@@ -1,16 +1,21 @@
 import { Logger } from "./utils";
 
+function parseInput(input: string) {
+  return input.split("\r\n");
+}
+
 /**
  *
  * Result: Total 59 minutes to solve (including setup though)
  */
-export async function day1Pt1(input: string[]) {
+export async function day1Pt1(input: string) {
+  const inputList = parseInput(input);
   let cur = 50;
   let res = 0;
 
   const logger = new Logger("1.1");
 
-  for (const rotStr of input) {
+  for (const rotStr of inputList) {
     const rot =
       rotStr.charAt(0) === "R"
         ? Number(rotStr.substring(1))
@@ -46,13 +51,14 @@ export async function day1Pt1(input: string[]) {
  * Result: 41 minutes - lots of debugging slight edge cases. Might be
  * a bit better if I started with tests instead
  */
-export async function day1Pt2(input: string[]) {
+export async function day1Pt2(input: string) {
+  const inputList = parseInput(input);
   let cur = 50;
   let res = 0;
 
   const logger = new Logger("1.2");
 
-  for (const rotStr of input) {
+  for (const rotStr of inputList) {
     const rot =
       rotStr.charAt(0) === "R"
         ? Number(rotStr.substring(1))
@@ -89,13 +95,14 @@ export async function day1Pt2(input: string[]) {
 /**
  * Result: Brute force approach solved in around 10 mins
  */
-export async function day1Pt2Brute(input: string[]) {
+export async function day1Pt2Brute(input: string) {
+  const inputList = parseInput(input);
   let cur = 50;
   let res = 0;
 
   const logger = new Logger("1.2brute");
 
-  for (const rotStr of input) {
+  for (const rotStr of inputList) {
     const rot =
       rotStr.charAt(0) === "R"
         ? Number(rotStr.substring(1))

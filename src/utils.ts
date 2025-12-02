@@ -1,7 +1,6 @@
 export async function getInput(num: number) {
   const file = Bun.file(`input/${num.toString()}.txt`);
-  const input = (await file.text()).split("\r\n");
-  return input;
+  return await file.text();
 }
 
 export class Logger {
