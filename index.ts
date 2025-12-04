@@ -1,6 +1,7 @@
 import { day1Pt1, day1Pt2, day1Pt2Brute } from "./src/1";
 import { day2 } from "./src/2";
 import { day3 } from "./src/3";
+import { day4, day4Pt2 } from "./src/4";
 import { getInput } from "./src/utils";
 
 const number = Bun.argv[2];
@@ -33,5 +34,13 @@ switch (number) {
   // 1:46
   case "3.2":
     day3(await getInput(3), true);
+    break;
+  // 33 min
+  case "4.1":
+    day4(await getInput(4));
+    break;
+  // 12 min
+  case "4.2":
+    day4Pt2(await getInput(4));
     break;
 }
